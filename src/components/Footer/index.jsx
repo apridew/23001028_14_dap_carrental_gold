@@ -1,6 +1,7 @@
+import { HashLink } from "react-router-hash-link";
 import "./style.css";
 
-let icons = [{ icon: "bi bi-facebook" }, { icon: "bi bi-instagram" }, { icon: "bi bi-twitter" }, { icon: "bi bi-envelope" }];
+const icons = [{ icon: "bi bi-facebook" }, { icon: "bi bi-instagram" }, { icon: "bi bi-twitter" }, { icon: "bi bi-envelope" }];
 const Footer = () => {
   return (
     <footer>
@@ -14,24 +15,24 @@ const Footer = () => {
           <div className="col-lg-2 col-md-2 col-sm-12">
             <ul className="gap-lg-3 gap-md-3 gap-sm-0 p-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#our-services">
+                <HashLink smooth={true} to={"/#our-services"} className="nav-link active" aria-current="page">
                   Our Services
-                </a>
+                </HashLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#why-us">
+                <HashLink smooth={true} to={"/#why-us"} className="nav-link">
                   Why Us
-                </a>
+                </HashLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#testimonial">
+                <HashLink smooth={true} to={"/#testimonial"} className="nav-link">
                   Testimonial
-                </a>
+                </HashLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#faq">
+                <HashLink smooth={true} to={"/#faq"} className="nav-link">
                   FAQ
-                </a>
+                </HashLink>
               </li>
             </ul>
           </div>
