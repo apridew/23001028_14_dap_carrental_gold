@@ -11,7 +11,6 @@ Before getting started, make sure you have Node.js and npm (Node Package Manager
 Install the dependencies and start the server.
 
 ```sh
-cd binar-car-rental
 npm i
 npm run dev
 ```
