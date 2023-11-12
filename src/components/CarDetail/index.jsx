@@ -92,9 +92,7 @@ const CarDetail = () => {
           <div className="col-lg-4 col-md-6 col-sm-12 p-0 content-right d-flex justify-content-center">
             <div className="frame-card">
               <div className="content-card-top">
-                <div className="frame-img">
-                  <img className="img-fluid" src={carDetail.image} alt={carDetail.name} />
-                </div>
+                <img className="img-fluid" src={carDetail.image} alt={carDetail.name} />
                 <p>{carDetail.name}</p>
                 <h6>
                   <span>

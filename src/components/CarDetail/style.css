@@ -64,12 +64,6 @@
     padding: 24px;
 }
 
-#car-detail .frame-img {
-    text-align: center;
-    max-height: 216px;
-    overflow: hidden;
-}
-
 #car-detail .accordion-button {
     box-shadow: none;
 }
