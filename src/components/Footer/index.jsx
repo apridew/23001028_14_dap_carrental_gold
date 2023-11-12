@@ -2,6 +2,10 @@ import { HashLink } from "react-router-hash-link";
 import "./style.css";
 
 const icons = [{ icon: "bi bi-facebook" }, { icon: "bi bi-instagram" }, { icon: "bi bi-twitter" }, { icon: "bi bi-envelope" }];
+
+const scrollTop = () => {
+  window.scrollTo(0, 0);
+};
 const Footer = () => {
   return (
     <footer>
@@ -48,9 +52,9 @@ const Footer = () => {
           </div>
           <div className="col-lg-3 col-md-3 col-sm-12 pb-5">
             <p>Copyright Binar 2023</p>
-            <a className="navbar-brand fw-bold" href="#">
+            <HashLink onClick={scrollTop} to={"/"} className="navbar-brand fw-bold">
               Binar Car
-            </a>
+            </HashLink>
           </div>
         </div>
       </div>
