@@ -94,22 +94,20 @@ const Testimonial = () => {
           </div>
         </div>
       </div>
-      <div className="parent">
-        <Carousel
-          responsive={responsive}
-          autoPlay={false}
-          swipeable={true}
-          draggable={true}
-          showDots={false}
-          infinite={true}
-          customRightArrow={<CustomRight onClick={handleRightClick} isClicked={!isButtonClicked} />}
-          customLeftArrow={<CustomLeft onClick={handleLeftClick} isClicked={isButtonClicked} />}
-        >
-          {cardTestimonial.map((data, id) => (
-            <TestimonialCard key={id} all={data} />
-          ))}
-        </Carousel>
-      </div>
+      <Carousel
+        responsive={responsive}
+        autoPlay={false}
+        swipeable={true}
+        draggable={true}
+        showDots={false}
+        infinite={true}
+        customRightArrow={<CustomRight onClick={handleRightClick} isClicked={!isButtonClicked} />}
+        customLeftArrow={<CustomLeft onClick={handleLeftClick} isClicked={isButtonClicked} />}
+      >
+        {cardTestimonial.map((data, id) => (
+          <TestimonialCard key={id} all={data} />
+        ))}
+      </Carousel>
     </section>
   );
 };
