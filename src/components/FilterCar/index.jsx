@@ -38,38 +38,26 @@ const FilterCar = () => {
   const handleCategoryCar = (e) => {
     setCategoryCar(e.target.value);
   };
+
   const handlePriceCar = (e) => {
-    const priceValue = e.target.value;
-
-    let minPrice = 0;
-    let maxPrice = 0;
-
-    switch (priceValue) {
-      case "0-349999":
-        minPrice = 0;
-        maxPrice = 349999;
-        break;
-      case "350000-500000":
-        minPrice = 350000;
-        maxPrice = 500000;
-        break;
-      case "500001-9999999999":
-        minPrice = 500001;
-        maxPrice = 9999999999;
-        break;
-      default:
-        minPrice = 0;
-        maxPrice = 9999999999;
-        break;
+    const valueOption = e.target.value;
+    if (valueOption === "0-399999") {
+      setMinPrice(0);
+      setMaxPrice(399999);
+    } else if (valueOption === "400000-600000") {
+      setMinPrice(400000);
+      setMaxPrice(600000);
+    } else if (valueOption === "400001-9999999999") {
+      setMinPrice(400001);
+      setMaxPrice(9999999999);
+    } else {
+      setMinPrice(0);
+      setMaxPrice(9999999999);
     }
-
-    setMinPrice(minPrice);
-    setMaxPrice(maxPrice);
   };
 
   const handleAvailableCar = (e) => {
-    const availableValue = e.target.value;
-    setAvailableCar(availableValue);
+    setAvailableCar(e.target.value);
   };
 
   const handleKeyPress = (e) => {
@@ -92,19 +80,16 @@ const FilterCar = () => {
 
   const handleSubmit = () => {
     handleGetCarList(nameCar, categoryCar, availableCar, minPrice, maxPrice);
-
     setIsSubmit(true);
-
-    // console.log(nameCar, categoryCar, minPrice, maxPrice, availableCar);
   };
 
   const handleReset = () => {
+    handleGetCarList("", "", false, "", "");
     setNameCar("");
     setCategoryCar("");
     setAvailableCar(false);
-    setMinPrice(0);
+    setMinPrice("");
     setMaxPrice(9999999999);
-    handleGetCarList("", "", false, "", "");
     setIsSubmit(false);
   };
 
@@ -137,10 +122,10 @@ const FilterCar = () => {
           <div className="col d-flex flex-column py-2">
             <label htmlFor="price">Harga</label>
             <select onChange={handlePriceCar} name="price" id="price" value={`${minPrice}-${maxPrice}`}>
-              <option value="0-9999999999">Masukan Harga Sewa per Hari</option>
-              <option value="0-349999">&lt; Rp. 350.000</option>
-              <option value="350000-500000">Rp 350.000 - Rp 500.000</option>
-              <option value="500001-9999999999">&gt; Rp. 500.000</option>
+              <option value="">Masukan Harga Sewa per Hari</option>
+              <option value="0-399999">&lt; Rp. 400.000</option>
+              <option value="400000-600000">Rp 400.000 - Rp 600.000</option>
+              <option value="400001-9999999999">&gt; Rp. 400.000</option>
             </select>
           </div>
           <div className="col d-flex flex-column py-2">
