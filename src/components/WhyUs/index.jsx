@@ -1,7 +1,7 @@
 import "./style.css";
 import WhyUsCard from "../WhyUsCard";
 
-let cardContent = [
+const cardContent = [
   {
     iconImg: "bi bi-hand-thumbs-up",
     title: "Mobil Lengkap",
